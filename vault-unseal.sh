@@ -22,7 +22,7 @@ for k in $VAULT_KEYS; do
             exit 1
         fi
 
-        vault unseal "$k" > /dev/null
+        vault operator unseal "$k" > /dev/null
         code=$?
         if [ $? -ne 0 ] ; then
             echo "unseal returned a bad exit code ($code). terminating..."
